@@ -17,6 +17,8 @@ body {
   margin-top: 20vh;
   background-color: #9AD2CB;
   box-shadow: 2px 5px 10px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  /* padding-bottom: 2rem; */
 }
 
 .App h1 {
@@ -62,6 +64,23 @@ input[type=text] {
 .task {
   display: flex;
   justify-content: space-between;
+
+}
+
+.task p {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.trash-icon {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 8px;
+  border-radius: 16px;
+}
+
+.trash-icon:hover {
+  background-color: rgba(254,255,190,0.8);
 
 }
 

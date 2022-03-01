@@ -13,7 +13,8 @@ function Todo({todo, handleDelete}) {
   return (
     <div className="task">
       <p>{todo.task}</p>
-      <FontAwesomeIcon icon={faTrashCan} 
+      <FontAwesomeIcon icon={faTrashCan}
+      className="trash-icon"
       type="button"  
       onClick={deleteTask}
       />

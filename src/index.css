@@ -8,16 +8,8 @@
 }
 
 body {
-  background-color: #FEFFBE;
+  background-color: #FEFFBE !important;
 }
-/* .navbar {
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  max-width: 600px;
-  margin: 0 auto;
-  border-bottom: 1px solid #f2f2f2;
-} */
 
 .App {
   width: 70%;
@@ -29,8 +21,61 @@ body {
 
 .App h1 {
   padding: 1rem;
+  text-align: center;
 }
 
+.todo-form {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 1rem;
+}
+
+.todo-input {
+  width: 80%;
+  border: 1px solid transparent;
+}
+
+input[type=text] {
+  padding-left: 8px;
+  color: #000;
+}
+
+
+.add-task {
+  border: 1px solid transparent;
+  background-color: #EBD494;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+.todo-bar {
+  padding: 10px 16px;
+  border-bottom: 1px solid #fafafa;
+  background-color: #D7EBBA;
+  display: flex;
+  justify-content: space-between;
+}
+
+.task p {
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 743px) {
+  .todo-input {
+    width: 50vw;
+  }
+
+  .add-task {
+    font-size: 3vw;
+  }
+  
+  ::placeholder {
+    font-size: 3vw;
+  }
+}
+
+/* BELOW IS FOR REFERENCE */
 .navbar h1 {
   color: #f1356d;
 }

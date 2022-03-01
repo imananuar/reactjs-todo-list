@@ -1,8 +1,15 @@
-import React from 'react'
+import React, {useState} from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faTrashCan} from '@fortawesome/free-solid-svg-icons';
 
-function Todo() {
+// Kita masukkan every todo ke dalam todoList.
+
+function Todo({todo}) {
+
   return (
-    <div>Todo</div>
+    <div>
+      <p>{todo.task}</p>
+    </div>
   )
 }
 

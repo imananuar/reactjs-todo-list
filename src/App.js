@@ -10,19 +10,21 @@ function App() {
 
   const addTodo = (todo) => {
     setTodos([todo, ...todos])
+
+    // Kita setkan todo ni dengan add todo baru, then disambungkan dengan todos yang lama
+    // Yang baru nak buat akan muncul paling atas, yang sebelum ni akan turun ke bawah
   }
 
-
-  const [input, setInput] = useState("");
+  const handleDelete = (id) => {
+    setTodos(todos.filter(todo => todo.id !== id));
+    // REMEMBER: Everytime nak update, guna setTodos
+  }
 
   return (
     <div className="App">
       <h1>Todo List</h1>
       <TodoForm addTodo={addTodo}/>
-
-      <TodoList todos={todos}/>
-
-
+      <TodoList todos={todos} handleDelete={handleDelete} />
     </div>
   );
 }

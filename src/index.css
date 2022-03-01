@@ -52,13 +52,17 @@ input[type=text] {
   padding: 10px 16px;
   border-bottom: 1px solid #fafafa;
   background-color: #D7EBBA;
-  display: flex;
-  justify-content: space-between;
 }
 
 .task p {
   margin: 0;
   padding: 0;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+
 }
 
 @media (max-width: 743px) {
@@ -73,40 +77,4 @@ input[type=text] {
   ::placeholder {
     font-size: 3vw;
   }
-}
-
-/* BELOW IS FOR REFERENCE */
-.navbar h1 {
-  color: #f1356d;
-}
-.navbar .links {
-  margin-left: auto;
-}
-.navbar a {
-  margin-left: 16px;
-  text-decoration: none;
-  padding: 6px;
-}
-.navbar a:hover {
-  color: #f1356d;
-}
-.content {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 20px;
-}
-
-/* blog previews / list */
-.blog-preview {
-  padding: 10px 16px;
-  margin: 20px 0;
-  border-bottom: 1px solid #fafafa;
-}
-.blog-preview:hover {
-  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
-}
-.blog-preview h2 {
-  font-size: 20px;
-  color: #f1356d;
-  margin-bottom: 8px;
 }

@@ -4,11 +4,19 @@ import {faTrashCan} from '@fortawesome/free-solid-svg-icons';
 
 // Kita masukkan every todo ke dalam todoList.
 
-function Todo({todo}) {
+function Todo({todo, handleDelete}) {
+
+  const deleteTask = () => {
+    handleDelete(todo.id)
+  }
 
   return (
-    <div>
+    <div className="task">
       <p>{todo.task}</p>
+      <FontAwesomeIcon icon={faTrashCan} 
+      type="button"  
+      onClick={deleteTask}
+      />
     </div>
   )
 }

@@ -25,8 +25,9 @@ function Todo({todo, handleDelete}) {
     setEditing(false);
   };
 
-  const handleCheckBox = (e) => {
+  const handleCheckBox = (todo) => {
     setChecked(!checked)
+    todo.complete = !todo.complete;
   }
 
   return (
@@ -44,7 +45,7 @@ function Todo({todo, handleDelete}) {
           type="checkbox" 
           className="checkbox"
           defaultChecked={checked}
-          onChange={(e) => {handleCheckBox(e)}}
+          onChange={() => {handleCheckBox(todo)}}
           />
 
           <li style={

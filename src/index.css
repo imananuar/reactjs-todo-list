@@ -12,7 +12,7 @@ body {
 }
 
 .App {
-  width: 70%;
+  width: 60vw;
   margin: auto;
   margin-top: 20vh;
   background-color: #9AD2CB;
@@ -72,19 +72,26 @@ input[type=text] {
   margin-bottom: auto;
 }
 
-.trash-icon {
-  margin-top: auto;
-  margin-bottom: auto;
+.icon {
+  margin: auto 0;
   padding: 8px;
   border-radius: 16px;
 }
 
-.trash-icon:hover {
+.icon:hover {
   background-color: rgba(254,255,190,0.8);
+}
 
+.icon-container {
+  /* position:relative; */
+  height: 30px;
 }
 
 @media (max-width: 743px) {
+
+  .App {
+    width: 70%;
+  }
   .todo-input {
     width: 50vw;
   }

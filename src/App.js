@@ -32,6 +32,11 @@ function App() {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos))
   }, [todos]);
 
+  const handleDeleteAll = () => {
+    setTodos([]);
+    console.log(todos.length)
+  }
+
   return (
     <div className="App">
       <h1>Todo List</h1>
@@ -39,9 +44,16 @@ function App() {
       <TodoList todos={todos} 
       handleDelete={handleDelete}
       />
-      <div className='button-container'>
-      <button className="delete-all-button" type="button">Delete All</button>
-      </div>
+      { todos.length > 1 ?
+        (<div className='button-container'>
+          <button 
+          className="delete-all-button" 
+          type="button"
+          onClick={handleDeleteAll}>
+            Delete All
+          </button>
+        </div>) : null
+      }
     </div>
   );
 }

@@ -30,13 +30,14 @@ body {
 
 .delete-all-button {
   margin: 1rem;
-  padding: 8px 16px;
+  padding: 6px 12px;
   border: transparent;
   border-radius: 8px;
   box-shadow: 1px 5px 8px rgba(0,0,0,0.1);
   /* background-color: #c74b83;
  */
-  background-color: #ecc761;;
+  background-color: #ecc761;
+  font-size: .7rem;
   font-weight: bold;
   /* color: #fff; */
 }

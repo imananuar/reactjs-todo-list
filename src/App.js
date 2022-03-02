@@ -12,11 +12,9 @@ function App() {
 
   useEffect(() => {
     const storageTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-
     if (storageTodos) {
       setTodos(storageTodos);
     }
-
   }, [])
 
   const addTodo = (todo) => {
@@ -34,8 +32,6 @@ function App() {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos))
   }, [todos]);
 
-
-
   return (
     <div className="App">
       <h1>Todo List</h1>
@@ -43,6 +39,9 @@ function App() {
       <TodoList todos={todos} 
       handleDelete={handleDelete}
       />
+      <div className='button-container'>
+      <button className="delete-all-button" type="button">Delete All</button>
+      </div>
     </div>
   );
 }

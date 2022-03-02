@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import Todo from './Todo';
 
 function TodoList({todos, handleDelete }) {
-
-  console.log(todos);
   return (
     <div className="todo-list">
         {todos.map(todo => (

@@ -12,8 +12,12 @@ function App() {
 
   useEffect(() => {
     const storageTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    // Access localstorage, get item from local_storage_key
+    // parse it to be an objects.
     if (storageTodos) {
+      // If storageTodos is not empty
       setTodos(storageTodos);
+      // setTodos will have the item from the local_storage_key
     }
   }, [])
 
@@ -30,12 +34,17 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos))
+    // Access local storage,  set key and value. setItem(key, value)
   }, [todos]);
+  // Whenever todos is changed (the array has additional or less items)
+  // Grab the updated version of local_storage_key
 
   const handleDeleteAll = () => {
     setTodos([]);
     console.log(todos.length)
   }
+
+
 
   return (
     <div className="App">

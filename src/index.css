@@ -70,6 +70,8 @@ input[type=text] {
   box-shadow: 1px 5px 8px rgba(0,0,0,0.1);
   padding: 4px 8px;
   border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.8rem;
 }
 
 .todo-bar {

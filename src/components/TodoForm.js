@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import TodoList from './TodoList';
 import { v4 as uuidv4 } from "uuid";
 
 function TodoForm({addTodo}) {

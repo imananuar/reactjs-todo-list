@@ -8,24 +8,30 @@ function Todo({todo, handleDelete}) {
 
   const deleteTask = () => {
     handleDelete(todo.id)
-  }
+  };
 
-  const [editing, setEditing] = useState(false)
+  const [editing, setEditing] = useState(false);
+  const [checked, setChecked] = useState(false);
 
   const handleEdit = (todo) => {
     setEditing(true);
-  }
+  };
 
   const changeValue = (e) => {
     todo.task = e.target.value
-  }
+  };
 
   const handleConfirm = () => {
     setEditing(false);
+  };
+
+  const handleCheckBox = (e) => {
+    setChecked(!checked)
   }
 
   return (
     <div className="task">
+
       {editing ? (
         <input
         type="text"
@@ -34,10 +40,26 @@ function Todo({todo, handleDelete}) {
         />
         ) : (
         <div className="task-container">
-          <input type="checkbox" className="checkbox" />
-          <li>{todo.task}</li>
+          <input 
+          type="checkbox" 
+          className="checkbox"
+          defaultChecked={checked}
+          onChange={(e) => {handleCheckBox(e)}}
+          />
+
+          <li style={
+            checked ? {
+              fontStyle: "italic", 
+              textDecoration: "line-through"
+              } : null
+              }>
+            {todo.task}
+          
+          </li>
+
         </div>
       )}
+
       <div className='icon-container'>
 
         {editing ? 
@@ -46,7 +68,6 @@ function Todo({todo, handleDelete}) {
         className="icon" 
         type="button"
         onClick={handleConfirm}
-        accessKey="enter"
         />
         : null}
         

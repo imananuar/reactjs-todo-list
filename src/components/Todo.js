@@ -29,10 +29,14 @@ function Todo({todo, handleDelete}) {
       {editing ? (
         <input
         type="text"
+        defaultValue={todo.task}
         onChange={changeValue}
         />
         ) : (
-        <p>{todo.task}</p>
+        <div className="task-container">
+          <input type="checkbox" className="checkbox" />
+          <li>{todo.task}</li>
+        </div>
       )}
       <div className='icon-container'>
 

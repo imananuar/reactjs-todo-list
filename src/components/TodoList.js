@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Todo from './Todo';
 
-function TodoList({todos, handleDelete}) {
+function TodoList({todos, handleDelete }) {
 
   console.log(todos);
   return (

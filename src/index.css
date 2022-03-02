@@ -16,7 +16,7 @@ body {
   margin: auto;
   margin-top: 20vh;
   background-color: #9AD2CB;
-  box-shadow: 2px 5px 10px rgba(0,0,0,0.1);
+  box-shadow: 2px 5px 10px rgba(0,0,0,0.4);
   border-radius: 12px;
   /* padding-bottom: 2rem; */
 }
@@ -56,9 +56,21 @@ input[type=text] {
   background-color: #D7EBBA;
 }
 
-.task p {
-  margin: 0;
+.task-container {
+  display: flex;
+}
+
+.checkbox {
+  margin: auto 0;
+  margin-right: 8px;
+  box-shadow: none;
+  /* padding: 1rem; */
+}
+
+.task-container li {
+  margin: auto;
   padding: 0;
+  list-style-type: none;
 }
 
 .task {

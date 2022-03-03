@@ -4,10 +4,10 @@ import {faTrashCan, faPenToSquare, faCircleCheck} from '@fortawesome/free-solid-
 
 // Kita masukkan every todo ke dalam todoList.
 
-function Todo({todo, handleDelete}) {
+function Todo({todo, handleDelete, handleCompletedTask, taskCompleteOrNot}) {
 
   const deleteTask = () => {
-    handleDelete(todo.id)
+    handleDelete(todo)
   };
 
   const [editing, setEditing] = useState(false);
@@ -19,14 +19,16 @@ function Todo({todo, handleDelete}) {
 
   const changeValue = (e) => {
     todo.task = e.target.value
-  };
+  }
 
   const handleConfirm = () => {
     setEditing(false);
   };
 
   const handleCheckBox = (todo) => {
-    setChecked(!checked)
+    taskCompleteOrNot();
+    handleCompletedTask(todo.complete);
+    setChecked(!checked);
     todo.complete = !todo.complete;
   }
 

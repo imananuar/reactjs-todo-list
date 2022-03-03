@@ -10,15 +10,22 @@ function App() {
   const [todos, setTodos] = useState([]);
   // Todos -> Letak semua todo yang pernah dicatatkan
 
+  const [complete, setComplete] = useState(
+    // (JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))).map(item => item.complete)
+    false
+  );
+
   useEffect(() => {
     const storageTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
     // Access localstorage, get item from local_storage_key
     // parse it to be an objects.
+
     if (storageTodos) {
       // If storageTodos is not empty
       setTodos(storageTodos);
       // setTodos will have the item from the local_storage_key
     }
+
   }, [])
 
   const addTodo = (todo) => {
@@ -27,10 +34,11 @@ function App() {
     // Yang baru nak buat akan muncul paling atas, yang sebelum ni akan turun ke bawah
   }
 
-  const handleDelete = (id) => {
-    setTodos(todos.filter(todo => todo.id !== id));
+  const handleDelete = (currentTodo) => {
+    setTodos(todos.filter(todo => todo.id !== currentTodo.id));
     // REMEMBER: Everytime nak update, guna setTodos
   }
+  
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos))
@@ -44,7 +52,14 @@ function App() {
     console.log(todos.length)
   }
 
+  const handleRemoveCompletedTask = () => {
+    setTodos(todos.filter(todo => !todo.complete ));
+    setComplete(false)
+  }
 
+  const handleCompletedTask = () => {
+    return complete
+  }
 
   return (
     <div className="App">
@@ -52,17 +67,38 @@ function App() {
       <TodoForm addTodo={addTodo}/>
       <TodoList todos={todos} 
       handleDelete={handleDelete}
+      handleCompletedTask={handleCompletedTask}
+      setComplete={setComplete}
       />
-      { todos.length > 1 ?
-        (<div className='button-container'>
+
+      <div className='button-container'>
+
+        {/* Kalau todo ada lebih dari 1, baru delete all muncul */}
+        { todos.length > 1 ?
           <button 
           className="delete-all-button" 
           type="button"
           onClick={handleDeleteAll}>
             Delete All
           </button>
-        </div>) : null
-      }
+          : null 
+        }
+
+        {/* Conditional: if completed task ada yang true, then baru appear */}
+        {handleCompletedTask() ? 
+        <button 
+        className=" delete-all-button remove-completed-task" 
+        type="button"
+        onClick={handleRemoveCompletedTask}>
+          Remove Completed Task
+        </button> 
+        : null
+        }
+
+        </div>
+
+      {/* Make Remove Completed Task */}
+      
     </div>
   );
 }

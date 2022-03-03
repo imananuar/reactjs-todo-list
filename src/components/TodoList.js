@@ -1,7 +1,12 @@
 import React from 'react';
 import Todo from './Todo';
 
-function TodoList({todos, handleDelete }) {
+function TodoList({todos, handleDelete, handleCompletedTask, setComplete }) {
+
+  const taskCompleteOrNot = () => {
+    setComplete(todos.some(todo => todo.complete));
+  }
+  
   return (
     <div className="todo-list">
         {todos.map(todo => (
@@ -9,6 +14,8 @@ function TodoList({todos, handleDelete }) {
             <Todo 
             todo={todo}
             handleDelete={handleDelete}
+            handleCompletedTask={handleCompletedTask}
+            taskCompleteOrNot={taskCompleteOrNot}
             />
           </div>
         ))}
